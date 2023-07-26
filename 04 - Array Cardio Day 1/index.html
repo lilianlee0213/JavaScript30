@@ -119,9 +119,9 @@
 				return aLast > bLast ? 1 : -1;
 			});
 			console.log(alphabetic);
+
 			// 7. Reduce Exercise
 			// Sum up the instances of each of these
-
 			const data = [
 				'car',
 				'car',
@@ -138,6 +138,15 @@
 				'car',
 				'truck',
 			];
+			const transportation = data.reduce((obj, item) => {
+				//set inital
+				if (!obj[item]) {
+					obj[item] = 0;
+				}
+				obj[item]++;
+				return obj;
+			}, {});
+			console.log(transportation);
 		</script>
 	</body>
 </html>
