@@ -35,6 +35,17 @@
 			<input id="base" type="color" name="base" value="#ffc600" />
 		</div>
 		<img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" />
-		<script></script>
+		<script>
+			const inputs = document.querySelectorAll('.controls input');
+			function handleUpdate() {
+				const suffix = this.dataset.sizing || '';
+				//setProprty(propertyName, value)
+				document.documentElement.style.setProperty(
+					`--${this.name}`,
+					this.value + suffix
+				);
+			}
+			inputs.forEach((input) => input.addEventListener('input', handleUpdate));
+		</script>
 	</body>
 </html>
