@@ -111,15 +111,17 @@
 				lastGuy > nextGuy ? -1 : 1;
 			});
 			console.log(oldest);
-
-			// 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
-			// https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-
-			// 7. sort Exercise
+			// 6. sort Exercise
 			// Sort the people alphabetically by last name
-
-			// 8. Reduce Exercise
+			const alphabetic = people.sort(function (lastOne, nextOne) {
+				const [aLast, aFirst] = lastOne.split(', ');
+				const [bLast, bFirst] = nextOne.split(', ');
+				return aLast > bLast ? 1 : -1;
+			});
+			console.log(alphabetic);
+			// 7. Reduce Exercise
 			// Sum up the instances of each of these
+
 			const data = [
 				'car',
 				'car',
